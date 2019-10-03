@@ -91,14 +91,6 @@ else
 	echo "Not setting up dash."
 fi
 
-mkinitcpio -p linux
-
-# Time settings
-timedatectl set-timezone UTC
-timedatectl set-ntp true
-hwclock --systohc --utc
-echo "NTP has been enabled and hardware clock will be in UTC. More information: https://wiki.archlinux.org/index.php/Time"
-
 if [[ -f /etc/vimrc ]]; then
 	echo "Enabling some base vim settings"
 	printf "%s\n" "syntax on" "filetype plugin indent on" "colorscheme darkblue" "set number" >> /etc/vimrc
